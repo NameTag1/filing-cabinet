@@ -1,7 +1,7 @@
-2025-10-08
-20:09:39 - Program Start
-20:09:40 - Application Initialized
-20:09:45 - Stopping...
-20:09:45 - Stopping...
-20:09:45 - Window Closed
-20:09:45 - Program Exit
+2025-10-24
+20:48:27 - Program Start
+20:48:28 - Application Initialized
+20:48:28 - Pushed Menue State
+20:48:30 - Stopping...
+20:48:30 - Window Closed
+20:48:30 - Program Exit

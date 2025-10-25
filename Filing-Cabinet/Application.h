@@ -1,5 +1,6 @@
 #pragma once
 #include "StateStack.h"
+#include "ResourceHolder.h"
 
 #include <SFML/Graphics.hpp>
 
@@ -15,5 +16,6 @@ private:
 	int FPS;
 	bool running;
 	sf::RenderWindow mWindow;
+	ResourceHolder mResourceHolder;
 };
 

@@ -15,8 +15,7 @@ void Logger::Initialize()
 	sysFile.open("System Log.txt");
 	actionFile.open("Action Log.txt");
 
-	std::chrono::system_clock::time_point now = std::chrono::system_clock::now();
-	std::time_t now_c = std::chrono::system_clock::to_time_t(now);
+	std::time_t now_c = std::time(nullptr);  // Faster than full chrono conversion
 	std::tm* local_tm = std::localtime(&now_c);
 
 	char timestring[80];
@@ -28,8 +27,7 @@ void Logger::Initialize()
 
 void Logger::LogData(LogType l, std::string s)
 {
-	std::chrono::system_clock::time_point now = std::chrono::system_clock::now();
-	std::time_t now_c = std::chrono::system_clock::to_time_t(now);
+	std::time_t now_c = std::time(nullptr);  // Faster than full chrono conversion
 	std::tm* local_tm = std::localtime(&now_c);
 
 	char timestring[80];

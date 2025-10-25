@@ -13,17 +13,16 @@ Application::Application()
 
 void Application::RUN()
 {
-	sf::Clock mClock;
-	sf::Time mTime = std::chrono::milliseconds(0);
-	sf::Time mRefreshRate = std::chrono::milliseconds(50);
-	
+	mWindow.setVerticalSyncEnabled(true); //Sets frame rate to monitor refresh rate
+	mStateStack.pushState(StateStack::Menue);
 	while (running) {
-		mTime += mClock.restart();
-		while (mTime > mRefreshRate) {
-			mTime -= mRefreshRate;
-			Logger::Instance->LogData(Logger::Action, "Loop");
-			handleEvents();
-		}
+		mWindow.clear({ 92, 255, 92 });
+
+		mStateStack.update();
+		handleEvents();
+		mStateStack.draw(&mWindow);
+
+		mWindow.display();
 	}
 	mWindow.close();
 	Logger::Instance->LogData(Logger::Sys, "Window Closed");
@@ -31,11 +30,15 @@ void Application::RUN()
 
 void Application::handleEvents()
 {
-	while (const std::optional event = mWindow.pollEvent())
+	while (const std::optional<sf::Event> event = mWindow.pollEvent())
 	{
 		if (event->is<sf::Event::Closed>()) {
 			running = false;
 			Logger::Instance->LogData(Logger::Sys, "Stopping...");
+			break;
+		}
+		else {
+			mStateStack.handleEvent(event);
 		}
 	}
 }
