@@ -7,12 +7,14 @@ Container::Container(RelativeRect rect)
 
 void Container::pushObject(std::unique_ptr<GUI_Object> object)
 {
-	mObjects.push_back(move(object));
+	mObjects.push_back(std::move(object));
 }
 
-void Container::update(sf::FloatRect parrentRect) {
+void Container::update(sf::FloatRect parentRect) {
+	mRect.update(parentRect); //Update own rect based on parrent rect BEFORE updating children
+	sf::FloatRect currentRect = mRect.getRect();
 	for(auto& object : mObjects) {
-		object->update(mRect.getRect());
+		object->update(currentRect);
 	}
 };
 
@@ -22,8 +24,8 @@ void Container::handleEvent(const std::optional<sf::Event> event) {
 	}
 };
 
-void Container::draw(sf::RenderWindow* target) {
+void Container::draw(sf::RenderTarget& target, sf::RenderStates states) const {
 	for (auto& object : mObjects) {
-		object->draw(target);
+		target.draw(*object.get(), states);
 	}
 };

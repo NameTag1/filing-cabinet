@@ -28,6 +28,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Application.cpp" />
+    <ClCompile Include="Button.cpp" />
     <ClCompile Include="Container.cpp" />
     <ClCompile Include="GUI_Object.cpp" />
     <ClCompile Include="Image.cpp" />
@@ -35,23 +36,29 @@
     <ClCompile Include="main.cpp" />
     <ClCompile Include="MenuState.cpp" />
     <ClCompile Include="RelativeRect.cpp" />
-    <ClCompile Include="ResourceHolder.cpp" />
     <ClCompile Include="State.cpp" />
     <ClCompile Include="StateStack.cpp" />
     <ClCompile Include="TextBox.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Application.h" />
+    <ClInclude Include="Button.h" />
     <ClInclude Include="Container.h" />
+    <ClInclude Include="Context.h" />
     <ClInclude Include="GUI_Object.h" />
+    <ClInclude Include="Header.h" />
     <ClInclude Include="Image.h" />
     <ClInclude Include="Logger.h" />
     <ClInclude Include="MenuState.h" />
     <ClInclude Include="RelativeRect.h" />
     <ClInclude Include="ResourceHolder.h" />
     <ClInclude Include="State.h" />
+    <ClInclude Include="States.h" />
     <ClInclude Include="StateStack.h" />
     <ClInclude Include="TextBox.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ResourceHolder.inl" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>17.0</VCProjectVersion>

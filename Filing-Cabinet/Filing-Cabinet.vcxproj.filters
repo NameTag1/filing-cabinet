@@ -31,18 +31,18 @@
     <Filter Include="Source Files\Static">
       <UniqueIdentifier>{2d5d838c-d902-4282-b7c7-98fa20d68fbc}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\Resources">
+      <UniqueIdentifier>{a407a9a1-8eac-475f-97e7-eca9416309f4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Enums">
+      <UniqueIdentifier>{dcb9f9bf-a61a-4954-9dee-4cf4b955c5ba}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="StateStack.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Application.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="State.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="MenuState.cpp">
@@ -57,9 +57,6 @@
     <ClCompile Include="GUI_Object.cpp">
       <Filter>Source Files\GUI</Filter>
     </ClCompile>
-    <ClCompile Include="ResourceHolder.cpp">
-      <Filter>Source Files\Static</Filter>
-    </ClCompile>
     <ClCompile Include="Logger.cpp">
       <Filter>Source Files\Static</Filter>
     </ClCompile>
@@ -69,15 +66,18 @@
     <ClCompile Include="Image.cpp">
       <Filter>Source Files\GUI</Filter>
     </ClCompile>
+    <ClCompile Include="State.cpp">
+      <Filter>Source Files\States</Filter>
+    </ClCompile>
+    <ClCompile Include="StateStack.cpp">
+      <Filter>Source Files\States</Filter>
+    </ClCompile>
+    <ClCompile Include="Button.cpp">
+      <Filter>Source Files\GUI</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Application.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="StateStack.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="State.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="MenuState.h">
@@ -95,14 +95,37 @@
     <ClInclude Include="Logger.h">
       <Filter>Header Files\Static</Filter>
     </ClInclude>
-    <ClInclude Include="ResourceHolder.h">
-      <Filter>Header Files\Static</Filter>
-    </ClInclude>
     <ClInclude Include="TextBox.h">
       <Filter>Header Files\GUI</Filter>
     </ClInclude>
     <ClInclude Include="Image.h">
       <Filter>Header Files\GUI</Filter>
     </ClInclude>
+    <ClInclude Include="Header.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ResourceHolder.h">
+      <Filter>Header Files\Resources</Filter>
+    </ClInclude>
+    <ClInclude Include="State.h">
+      <Filter>Header Files\States</Filter>
+    </ClInclude>
+    <ClInclude Include="StateStack.h">
+      <Filter>Header Files\States</Filter>
+    </ClInclude>
+    <ClInclude Include="Context.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="States.h">
+      <Filter>Header Files\Enums</Filter>
+    </ClInclude>
+    <ClInclude Include="Button.h">
+      <Filter>Header Files\GUI</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ResourceHolder.inl">
+      <Filter>Header Files\Resources</Filter>
+    </None>
   </ItemGroup>
 </Project>

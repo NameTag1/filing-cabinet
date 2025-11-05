@@ -5,10 +5,12 @@
 class Image : public GUI_Object
 {
 public:
-	Image(sf::Texture texture, RelativeRect rect);
+	Image(sf::Texture* texture, RelativeRect rect);
 
 	virtual bool update(sf::FloatRect parrentRect) override;
-	virtual bool draw(sf::RenderWindow* target) override;
+	
+private
+	virtual void draw(sf::RenderTarget* target, sf::RenderStates states) const override;
 
 private:
 	sf::Sprite mSprite;

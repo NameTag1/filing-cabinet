@@ -1,6 +1,7 @@
 #include "StateStack.h"
 
 #include "Logger.h"
+#include "MenuState.h"
 
 StateStack::StateStack()
 {
@@ -9,7 +10,7 @@ StateStack::StateStack()
 void StateStack::update()
 {
 	for(auto & state : mStates) {
-		if(!state.update()) {
+		if(!state->update()) {
 			break; // If false is returned, stop updating further states
 		}
 	}
@@ -18,7 +19,7 @@ void StateStack::update()
 void StateStack::handleEvent(const std::optional<sf::Event> event)
 {
 	for(auto & state : mStates) {
-		if(!state.handleEvent(event)) {
+		if(!state->handleEvent(event)) {
 			break; // If false is returned, stop event handling of further states
 		}
 	}
@@ -27,22 +28,18 @@ void StateStack::handleEvent(const std::optional<sf::Event> event)
 void StateStack::draw(sf::RenderWindow* target)
 {
 	for(auto & state : mStates) {
-		if(!state.draw(target)) {
+		if(!state->draw(target)) {
 			break; // If false is returned, stop drawing further states
 		}
 	}
 }
 
-void StateStack::pushState(StateTypes type)
+void StateStack::pushState(StateType type)
 {
 	switch(type) {
-		case Menue:
-			// mStates.push_back(MenueState());
-			Logger::Instance->LogData(Logger::Sys, "Pushed Menue State");
-			break;
-		case etc:
-			// mStates.push_back(EtcState());
-			Logger::Instance->LogData(Logger::Sys, "Pushed Menue State");
+		case Menu:
+			mStates.push_back(new MenuState());
+			mContext->mLogger->LogData(Logger::Sys, "Pushed Menu State");
 			break;
 		default:
 			// Handle unknown state type
@@ -52,8 +49,16 @@ void StateStack::pushState(StateTypes type)
 
 void StateStack::popState()
 {
+	mStates.pop_back();
 }
 
 void StateStack::clearStates()
 {
+	mStates.clear();
+}
+
+void StateStack::setContext(Context* context)
+{
+	mContext = context;
+	State::setContext(context);
 }

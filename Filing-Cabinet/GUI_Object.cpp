@@ -13,6 +13,6 @@ bool GUI_Object::handleEvent(const std::optional<sf::Event> event) {
 	return false;
 };
 
-bool GUI_Object::draw(sf::RenderWindow* target) {
-	return false;
+void GUI_Object::draw(sf::RenderTarget* target, sf::RenderStates states) const {
+	
 };
