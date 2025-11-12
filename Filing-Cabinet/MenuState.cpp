@@ -2,22 +2,31 @@
 
 #include "ResourceHolder.h"
 #include "Image.h"
+#include "Button.h"
 
 MenuState::MenuState()
-	: mContainer(RelativeRect(sf::FloatRect({ 0, 0 },{ 1, 1 })))
+	: mContainer(RelativeRect(sf::FloatRect({ 0.f, 0.f },{ 1.f, 1.f })))
 {
 	context->mTextureHolder->loadResource("Resources/Button.png", "Button");
-	mContainer.pushObject(std::make_unique<Image>(
+	/*mContainer.pushObject(std::make_unique<Image>(
 		context->mTextureHolder->getResource("Button"),
-		RelativeRect(sf::FloatRect({0.5f, 0.5f}, {0.5f, 0.5f}), RelativeWH::Normal, Anchor::TL)
-	));
+		RelativeRect(sf::FloatRect({0.5f, 0.5f}, {0.25f, 0.2f}), RelativeWH::Normal, Anchor::Center)
+	));*/
+
+	std::unique_ptr<Button> exitButton = std::make_unique<Button>(
+		context->mTextureHolder->getResource("Button"),
+		RelativeRect(sf::FloatRect({ 0.0f, 0.0f }, { 0.25f, 0.2f }), RelativeWH::Normal, Anchor::TL)
+	);
+	exitButton->SetCallback([this]() {
+		context->mLogger->LogData(Logger::Action, "Button Pressed!");
+		this->push(StateType::Menu);
+	});
+	mContainer.pushObject(std::move(exitButton));
 }
 
 bool MenuState::update() {
 	sf::Vector2f viewSize = context->mWindow->getView().getSize();
 	mContainer.update(sf::FloatRect({ 0.f, 0.f }, { viewSize.x, viewSize.y }));
-
-	context->mLogger->LogData(Logger::Sys, std::to_string(viewSize.x));
 
 	return false;
 }
@@ -27,7 +36,7 @@ bool MenuState::handleEvent(const std::optional<sf::Event> event) {
 	return false;
 }
 
-bool MenuState::draw(sf::RenderWindow* target) {
-	target->draw(mContainer);
+bool MenuState::draw() {
+	context->mWindow->draw(mContainer);
 	return false;
 }

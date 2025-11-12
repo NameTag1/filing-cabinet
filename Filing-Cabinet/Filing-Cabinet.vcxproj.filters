@@ -101,9 +101,6 @@
     <ClInclude Include="Image.h">
       <Filter>Header Files\GUI</Filter>
     </ClInclude>
-    <ClInclude Include="Header.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="ResourceHolder.h">
       <Filter>Header Files\Resources</Filter>
     </ClInclude>

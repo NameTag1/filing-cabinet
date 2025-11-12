@@ -12,7 +12,7 @@ public:
 	StateStack();
 	void update();
 	void handleEvent(const std::optional<sf::Event> event);
-	void draw(sf::RenderWindow* target);
+	void draw();
 
 	void pushState(StateType type);
 	void popState();
@@ -21,6 +21,13 @@ public:
 	void setContext(Context* context);
 
 private:
+	enum Actions {
+		push,
+		pop,
+		clear
+	};
+	void RunActions();
+	std::vector<std::pair<Actions, StateType>> mActionQueue;
 	std::vector<State*> mStates;
 	Context* mContext;
 };

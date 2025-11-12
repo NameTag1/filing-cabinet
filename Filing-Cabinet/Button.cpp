@@ -7,15 +7,32 @@ Button::Button(sf::Texture* texture, RelativeRect rect)
 {
 }
 
+void Button::SetCallback(std::function<void()> callback)
+{
+	mCallback = callback;
+}
+
 bool Button::update(sf::FloatRect parrentRect)
 {
 	mRect.update(parrentRect);
 	mRect.scaleSprite(mSprite);
+	setPosition(mRect.getRect().position);
 
 	return false;
 }
 
-void Button::draw(sf::RenderWindow* target, sf::RenderStates states) const
+bool Button::handleEvent(const std::optional<sf::Event> event)
 {
-	target->draw(mSprite, states);
+	return false;
+}
+
+void Button::activate()
+{
+	mCallback();
+}
+
+void Button::draw(sf::RenderTarget& target, sf::RenderStates states) const
+{
+	states.transform *= getTransform();
+	target.draw(mSprite, states);
 }

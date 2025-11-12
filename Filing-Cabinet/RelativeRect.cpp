@@ -111,10 +111,9 @@ sf::FloatRect RelativeRect::getRect(sf::FloatRect target)
 //Set sprite dimentions to rect
 void RelativeRect::scaleSprite(sf::Sprite& sprite)
 {
-	float scalex = tempRect.size.x / sprite.getGlobalBounds().size.x;
-	float scaley = tempRect.size.y / sprite.getGlobalBounds().size.y;
-
-	sprite.scale({ scalex, scaley });
+	const sf::FloatRect local = sprite.getLocalBounds();
+	if (local.size.x <= 0.f || local.size.y <= 0.f) return;
+	sprite.setScale({ tempRect.size.x / local.size.x, tempRect.size.y / local.size.y });
 }
 
 //Set sprite dimentions to rect, with option to maintain ratio

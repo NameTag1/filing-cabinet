@@ -11,11 +11,13 @@ bool Image::update(sf::FloatRect parrentRect)
 {
 	mRect.update(parrentRect);
 	mRect.scaleSprite(mSprite);
+	setPosition(mRect.getRect().position);
+
 	return false;
 }
 
-bool Image::draw(sf::RenderTarget* target, sf::RenderStates states)
+void Image::draw(sf::RenderTarget& target, sf::RenderStates states) const
 {
-	target->draw(mSprite);
-	return false;
+	states.transform *= getTransform();
+	target.draw(mSprite, states);
 }

@@ -10,7 +10,7 @@ public:
 
 	virtual bool update();
 	virtual bool handleEvent(const std::optional<sf::Event> event);
-	virtual bool draw(sf::RenderWindow* target);
+	virtual bool draw();
 
 private:
 	Container mContainer;

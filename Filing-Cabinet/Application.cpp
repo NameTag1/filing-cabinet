@@ -29,12 +29,13 @@ void Application::RUN()
 
 		mStateStack.update();
 		handleEvents();
-		mStateStack.draw(&mWindow);
+		mStateStack.draw();
 
 		mWindow.display();
 	}
 	mWindow.close();
 	mContext.mLogger->LogData(Logger::Sys, "Window Closed");
+	mContext.mLogger->WriteLog();
 }
 
 void Application::handleEvents()

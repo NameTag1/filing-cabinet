@@ -46,7 +46,6 @@
     <ClInclude Include="Container.h" />
     <ClInclude Include="Context.h" />
     <ClInclude Include="GUI_Object.h" />
-    <ClInclude Include="Header.h" />
     <ClInclude Include="Image.h" />
     <ClInclude Include="Logger.h" />
     <ClInclude Include="MenuState.h" />

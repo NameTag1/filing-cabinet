@@ -15,7 +15,7 @@ public:
 	
 	virtual bool update();
 	virtual bool handleEvent(const std::optional<sf::Event> event);
-	virtual bool draw(sf::RenderWindow* target);
+	virtual bool draw();
 	
 	void push(StateType type);
 	void pop();

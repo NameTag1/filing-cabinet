@@ -2,6 +2,7 @@
 
 enum StateType
 {
+	Null,
 	Menu,
 	Settings,
 	Scanner,

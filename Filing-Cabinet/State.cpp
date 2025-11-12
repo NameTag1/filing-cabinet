@@ -29,7 +29,7 @@ bool State::handleEvent(const std::optional<sf::Event> event)
 	return false;
 }
 
-bool State::draw(sf::RenderWindow* target)
+bool State::draw()
 {
 	return false;
 }

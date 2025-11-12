@@ -14,10 +14,8 @@ public:
 	void handleEvent(const std::optional<sf::Event> event);
 
 private:
-	// Override sf::Drawable's pure virtual function
 	virtual void draw(sf::RenderTarget& target, sf::RenderStates states) const override;
 
-private:
 	RelativeRect mRect;
 	std::vector<std::unique_ptr<GUI_Object>> mObjects;
 };

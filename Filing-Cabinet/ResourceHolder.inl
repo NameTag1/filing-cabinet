@@ -19,10 +19,10 @@ void ResourceHolder<T>::loadResource(const std::filesystem::path& filename, std:
 	}
 	T resource;
 	if (!resource.loadFromFile(filename)) {
-		Logger::Instance->LogData(Logger::Sys, "Failed to load texture from file: " + filename.string());
+		/*Logger::Instance->LogData(Logger::Sys, "Failed to load texture from file: " + filename.string());*/
 		return;
 	}
 	mResources[key] = resource;
 
-	Logger::Instance->LogData(Logger::Action, "Loaded texture from file: " + filename.string() + " with key: " + key);
+	//Logger::Instance->LogData(Logger::Action, "Loaded texture from file: " + filename.string() + " with key: " + key);
 }
