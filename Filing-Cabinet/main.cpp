@@ -2,17 +2,11 @@
 //
 
 #include "Application.h"
-#include "Logger.h"
 
 int WinMain()
 {
-    Logger::Instance->LogData(Logger::Sys, "Program Start");
-    
     Application app;
     app.RUN();
-    
-    Logger::Instance->LogData(Logger::Sys, "Program Exit");
-    Logger::Instance->CloseLogger();
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu

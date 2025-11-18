@@ -16,24 +16,15 @@ void Container::update(sf::FloatRect parentRect) {
 
 	sf::FloatRect currentRect = mRect.getRect();
 	for(auto& object : mObjects) {
-		if (object->update(currentRect)) {
-			break;
-		};
+		object->update(currentRect);
 	}
-};
+}
 
-void Container::handleEvent(const std::optional<sf::Event> event) {
+void Container::handleEvent(const std::optional<sf::Event> event, sf::RenderWindow* window) {
 	for (auto& object : mObjects) {
-		if (const auto* mouseEvent = event->getIf<sf::Event::MouseButtonReleased>()) {
-			if (mouseEvent->button == sf::Mouse::Button::Left)
-			{
-				if (object->getRect().contains(sf::Vector2f(mouseEvent->position))) {
-					object->activate();
-				}
-			}
-		}
+		object->handleEvent(event, window);
 	}
-};
+}
 
 void Container::draw(sf::RenderTarget& target, sf::RenderStates states) const {
 	states.transform *= getTransform();
@@ -41,4 +32,4 @@ void Container::draw(sf::RenderTarget& target, sf::RenderStates states) const {
 	for (auto& object : mObjects) {
 		target.draw(*object, states);
 	}
-};
+}

@@ -1,1 +1,3 @@
-2025-11-11
+2025-11-17
+20:38:25 - JsonHandler opened Data/settings.json
+20:38:27 - Button Pressed!

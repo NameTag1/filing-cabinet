@@ -37,6 +37,12 @@
     <Filter Include="Header Files\Enums">
       <UniqueIdentifier>{dcb9f9bf-a61a-4954-9dee-4cf4b955c5ba}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\JSON">
+      <UniqueIdentifier>{ad1abe35-d820-4c96-a357-8e529502e692}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\JSON">
+      <UniqueIdentifier>{b0454e13-e5f3-40cb-a816-4d2bd01edb39}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -74,6 +80,9 @@
     </ClCompile>
     <ClCompile Include="Button.cpp">
       <Filter>Source Files\GUI</Filter>
+    </ClCompile>
+    <ClCompile Include="JsonHandler.cpp">
+      <Filter>Source Files\JSON</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -118,6 +127,9 @@
     </ClInclude>
     <ClInclude Include="Button.h">
       <Filter>Header Files\GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="JsonHandler.h">
+      <Filter>Header Files\JSON</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

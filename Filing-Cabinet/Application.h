@@ -2,6 +2,7 @@
 #include "StateStack.h"
 #include "ResourceHolder.h"
 #include "Context.h"
+#include "JsonHandler.h"
 
 #include <SFML/Graphics.hpp>
 
@@ -18,5 +19,6 @@ private:
 	bool running;
 	sf::RenderWindow mWindow;
 	Context mContext;
+	JsonHandler mJsonHandler;
 };
 

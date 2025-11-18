@@ -40,8 +40,6 @@ void StateStack::draw()
 void StateStack::pushState(StateType type)
 {
 	mActionQueue.push_back(std::pair(Actions::push, type));
-	mContext->mLogger->LogData(Logger::Sys, "Pushed Menu State");
-	
 }
 
 void StateStack::popState()
@@ -51,7 +49,12 @@ void StateStack::popState()
 
 void StateStack::clearStates()
 {
-	mActionQueue.push_back(std::pair(Actions::pop, StateType::Null));
+	mActionQueue.push_back(std::pair(Actions::clear, StateType::Null));
+}
+
+bool StateStack::isEmpty() const
+{
+	return mStates.empty();
 }
 
 void StateStack::setContext(Context* context)
@@ -62,12 +65,14 @@ void StateStack::setContext(Context* context)
 
 void StateStack::RunActions()
 {
-	for (auto i : mActionQueue) {
+	for (auto& i : mActionQueue) {
 		if (i.first == Actions::clear) {
 			mStates.clear();
+			mContext->mLogger->LogData(Logger::Sys, "States Cleared");
 		}
 		else if (i.first == Actions::pop) {
 			mStates.pop_back();
+			mContext->mLogger->LogData(Logger::Sys, "State Popped");
 		}
 		else if (i.first == Actions::push) {
 			switch (i.second) {
@@ -77,7 +82,7 @@ void StateStack::RunActions()
 				break;
 			default:
 				// Handle unknown state type
-				mContext->mLogger->LogData(Logger::Sys, "Unknown State Pushed");
+				mContext->mLogger->LogData(Logger::Sys, "Unknown State Attempted to Push");
 				break;
 			}
 		}

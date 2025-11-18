@@ -21,14 +21,29 @@ bool Button::update(sf::FloatRect parrentRect)
 	return false;
 }
 
-bool Button::handleEvent(const std::optional<sf::Event> event)
+bool Button::handleEvent(const std::optional<sf::Event> event, sf::RenderWindow* window)
 {
-	return false;
-}
+	if (!event.has_value() || window == nullptr) return false;
 
-void Button::activate()
-{
-	mCallback();
+	if (const auto* mouseEvent = event->getIf<sf::Event::MouseButtonReleased>()) {
+		if (mouseEvent->button == sf::Mouse::Button::Left)
+		{
+			// Convert window pixel coords -> world coords
+			sf::Vector2f mouseWorld = window->mapPixelToCoords({ mouseEvent->position.x, mouseEvent->position.y });
+			
+			// Convert world coords into this object's local coords
+			sf::Vector2f localPos = getInverseTransform().transformPoint(mouseWorld);
+
+			// Local rect is (0,0) .. (width, height)
+			const sf::FloatRect rectLocal({ 0.f, 0.f }, { mRect.getRect().size.x, mRect.getRect().size.y });
+
+			if (rectLocal.contains(localPos)) {
+				if (mCallback) mCallback();
+				return true;
+			}
+		}
+	}
+	return false;
 }
 
 void Button::draw(sf::RenderTarget& target, sf::RenderStates states) const

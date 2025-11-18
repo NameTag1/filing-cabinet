@@ -32,6 +32,7 @@
     <ClCompile Include="Container.cpp" />
     <ClCompile Include="GUI_Object.cpp" />
     <ClCompile Include="Image.cpp" />
+    <ClCompile Include="JsonHandler.cpp" />
     <ClCompile Include="Logger.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="MenuState.cpp" />
@@ -47,6 +48,7 @@
     <ClInclude Include="Context.h" />
     <ClInclude Include="GUI_Object.h" />
     <ClInclude Include="Image.h" />
+    <ClInclude Include="JsonHandler.h" />
     <ClInclude Include="Logger.h" />
     <ClInclude Include="MenuState.h" />
     <ClInclude Include="RelativeRect.h" />
@@ -136,7 +138,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>C:\Users\natha\Documents\SFML-3.0.2\include;C:\Users\natha\Documents\rapidjson-1.1.0\include</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\natha\Documents\SFML-3.0.2\include;C:\Users\natha\Documents\json-develop\include</AdditionalIncludeDirectories>
       <LanguageStandard>stdcpp17</LanguageStandard>
       <DisableSpecificWarnings>4996</DisableSpecificWarnings>
     </ClCompile>
@@ -155,7 +157,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>C:\Users\natha\Documents\SFML-3.0.2\include;C:\Users\natha\Documents\rapidjson-1.1.0\include</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\natha\Documents\SFML-3.0.2\include;C:\Users\natha\Documents\json-develop\include</AdditionalIncludeDirectories>
       <DisableSpecificWarnings>4996</DisableSpecificWarnings>
     </ClCompile>
     <Link>
@@ -171,7 +173,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>C:\Users\natha\Documents\SFML-3.0.2\include;C:\Users\natha\Documents\rapidjson-1.1.0\include</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\natha\Documents\SFML-3.0.2\include;C:\Users\natha\Documents\json-develop\include</AdditionalIncludeDirectories>
       <LanguageStandard>stdcpp17</LanguageStandard>
       <DisableSpecificWarnings>4996</DisableSpecificWarnings>
     </ClCompile>
@@ -190,7 +192,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>C:\Users\natha\Documents\SFML-3.0.2\include;C:\Users\natha\Documents\rapidjson-1.1.0\include</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\natha\Documents\SFML-3.0.2\include;C:\Users\natha\Documents\json-develop\include</AdditionalIncludeDirectories>
       <DisableSpecificWarnings>4996</DisableSpecificWarnings>
     </ClCompile>
     <Link>
@@ -206,7 +208,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>C:\Users\natha\Documents\SFML-3.0.2\include;C:\Users\natha\Documents\rapidjson-1.1.0\include</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\natha\Documents\SFML-3.0.2\include;C:\Users\natha\Documents\json-develop\include</AdditionalIncludeDirectories>
       <LanguageStandard>stdcpp17</LanguageStandard>
       <DisableSpecificWarnings>4996</DisableSpecificWarnings>
     </ClCompile>
@@ -225,7 +227,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>C:\Users\natha\Documents\SFML-3.0.2\include;C:\Users\natha\Documents\rapidjson-1.1.0\include</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\natha\Documents\SFML-3.0.2\include;C:\Users\natha\Documents\json-develop\include</AdditionalIncludeDirectories>
       <DisableSpecificWarnings>4996</DisableSpecificWarnings>
     </ClCompile>
     <Link>

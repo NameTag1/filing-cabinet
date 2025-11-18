@@ -11,7 +11,7 @@ public:
 	void pushObject(std::unique_ptr<GUI_Object> object);
 
 	void update(sf::FloatRect parentRect);
-	void handleEvent(const std::optional<sf::Event> event);
+	void handleEvent(const std::optional<sf::Event> event, sf::RenderWindow* window);
 
 private:
 	virtual void draw(sf::RenderTarget& target, sf::RenderStates states) const override;

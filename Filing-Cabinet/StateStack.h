@@ -18,6 +18,8 @@ public:
 	void popState();
 	void clearStates();
 
+	bool isEmpty() const;
+
 	void setContext(Context* context);
 
 private:
