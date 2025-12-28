@@ -2,9 +2,6 @@
 
 GUI_Object::GUI_Object(RelativeRect mRect)
 	: mRect(mRect)
-	, mHasFocus(false)
-	, mSelectable(false)
-	, mIsActive(false)
 {
 }
 
@@ -15,15 +12,6 @@ bool GUI_Object::update(sf::FloatRect parrentRect) {
 bool GUI_Object::handleEvent(const std::optional<sf::Event> event, sf::RenderWindow* window) {
 	return false;
 }
-
-void GUI_Object::focus()
-{
-	mHasFocus = true;
-}
-
-void GUI_Object::activate()
-{
-};
 
 void GUI_Object::draw(sf::RenderTarget& target, sf::RenderStates states) const {
 

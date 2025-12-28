@@ -68,21 +68,21 @@ void StateStack::RunActions()
 	for (auto& i : mActionQueue) {
 		if (i.first == Actions::clear) {
 			mStates.clear();
-			mContext->mLogger->LogData(Logger::Sys, "States Cleared");
+			Logger::Instance->LogData(Logger::Sys, "States Cleared");
 		}
 		else if (i.first == Actions::pop) {
 			mStates.pop_back();
-			mContext->mLogger->LogData(Logger::Sys, "State Popped");
+			Logger::Instance->LogData(Logger::Sys, "State Popped");
 		}
 		else if (i.first == Actions::push) {
 			switch (i.second) {
 			case Menu:
 				mStates.push_back(new MenuState());
-				mContext->mLogger->LogData(Logger::Sys, "Pushed Menu State");
+				Logger::Instance->LogData(Logger::Sys, "Pushed Menu State");
 				break;
 			default:
 				// Handle unknown state type
-				mContext->mLogger->LogData(Logger::Sys, "Unknown State Attempted to Push");
+				Logger::Instance->LogData(Logger::Sys, "Unknown State Attempted to Push");
 				break;
 			}
 		}

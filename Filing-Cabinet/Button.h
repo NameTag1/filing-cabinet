@@ -6,7 +6,7 @@
 class Button : public GUI_Object
 {
 public:
-	Button(sf::Texture* texture, RelativeRect rect);
+	Button(sf::Texture* texture, sf::Texture* hoverTexture, RelativeRect rect);
 
 	void SetCallback(std::function<void()> callback);
 
@@ -16,6 +16,8 @@ public:
 private:
 	virtual void draw(sf::RenderTarget& target, sf::RenderStates states) const override;
 
+	bool hoveredOver;
 	std::function<void()> mCallback;
 	sf::Sprite mSprite;
+	sf::Sprite mHoverSprite;
 };

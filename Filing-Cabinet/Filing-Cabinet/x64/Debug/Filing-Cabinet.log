@@ -1,2 +1,6 @@
-﻿  MenuState.cpp
-  Filing-Cabinet.vcxproj -> C:\Users\natha\Documents\GitHub\filing-cabinet\filing-cabinet\x64\Debug\Filing-Cabinet.exe
+﻿  Application.cpp
+  OCR_Wrapper.cpp
+  Generating Code...
+  Filing-Cabinet.vcxproj -> C:\Users\natha\Documents\GitHub\filing-cabinet\Filing-Cabinet\x64\Debug\Filing-Cabinet.exe
+  'pwsh.exe' is not recognized as an internal or external command,
+  operable program or batch file.

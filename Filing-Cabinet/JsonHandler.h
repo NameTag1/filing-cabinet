@@ -3,13 +3,12 @@
 #include "nlohmann/json.hpp"
 using json = nlohmann::json;
 
-#include "Logger.h"
+#include <map>
 
 class JsonHandler
 {
 public:
 	JsonHandler();
-	void setLogger(Logger* l);
 	void openJson(std::string accessKey, std::string filePath);
 	void writeAll();
 	void clearEntry(std::string accessKey);
@@ -18,6 +17,5 @@ public:
 	std::map<std::string, json> DATA;
 private:
 	std::map<std::string, std::string> accessKeyToFile;
-	Logger* logger;
 };
 

@@ -2,20 +2,25 @@
 #include "Logger.h"
 
 #include "States.h"
+#include <optional>
+#include "ResourceHolder.h"
+#include <SFML/Graphics/Rect.hpp>
+#include <SFML/Graphics/View.hpp>
+#include <SFML/Window/Event.hpp>
+#include <SFML/Window/VideoMode.hpp>
 
 Application::Application()
 	: FPS(60)
 	, running(true)
 	, mWindow(sf::VideoMode({ 1, 1 }), "Filing Cabinet") //Not Zero, otherwise would mess up rects
+	, mOCR()
 {
 	mContext.mWindow = &mWindow;
-	mContext.mLogger = new Logger;
 	mContext.mTextureHolder = new TextureHolder();
 	mContext.mFontHolder = new FontHolder();
 
-	mContext.mLogger->LogData(Logger::Sys, "Application Initialized");
+	Logger::Instance->LogData(Logger::Sys, "Application Initialized");
 
-	mJsonHandler.setLogger(mContext.mLogger);
 	mJsonHandler.openJson("settings", "Data/settings.json");
 
 	mWindow.setSize({ mJsonHandler.DATA["settings"]["Window"]["ScreenW"],mJsonHandler.DATA["settings"]["Window"]["ScreenH"] });
@@ -54,11 +59,12 @@ void Application::RUN()
 	mJsonHandler.DATA["settings"]["Window"]["ScreenY"] = mWindow.getPosition().y;
 	mJsonHandler.writeAll();
 	mJsonHandler.closeAll();
-	mContext.mLogger->LogData(Logger::Sys, "JsonHandler Closed");
+	Logger::Instance->LogData(Logger::Sys, "JsonHandler Closed");
+
+	mOCR.getText("1Data.png");
 
 	mWindow.close();
-	mContext.mLogger->LogData(Logger::Sys, "Window Closed");
-	mContext.mLogger->WriteLog();
+	Logger::Instance->LogData(Logger::Sys, "Window Closed");
 }
 
 void Application::handleEvents()
@@ -67,7 +73,7 @@ void Application::handleEvents()
 	{
 		if (event->is<sf::Event::Closed>()) {
 			running = false;
-			mContext.mLogger->LogData(Logger::Sys, "Stopping...");
+			Logger::Instance->LogData(Logger::Sys, "Stopping...");
 			break;
 		}
 		else {

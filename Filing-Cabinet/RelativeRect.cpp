@@ -108,6 +108,11 @@ sf::FloatRect RelativeRect::getRect(sf::FloatRect target)
 	return tempRect;
 }
 
+sf::FloatRect RelativeRect::getRelativeRect()
+{
+	return sf::FloatRect({ x, y }, { w, h });
+}
+
 //Set sprite dimentions to rect
 void RelativeRect::scaleSprite(sf::Sprite& sprite)
 {

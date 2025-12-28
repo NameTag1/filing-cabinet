@@ -43,6 +43,18 @@
     <Filter Include="Source Files\JSON">
       <UniqueIdentifier>{b0454e13-e5f3-40cb-a816-4d2bd01edb39}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\GUI\Containers">
+      <UniqueIdentifier>{9afa922b-8815-4f26-84e3-b73724a17a4b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\GUI\Containers">
+      <UniqueIdentifier>{3735cdd9-503a-4314-b0cb-a1dd8114d8d4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\OCR">
+      <UniqueIdentifier>{bf9868e8-ccff-42e1-8a9c-b4bdaad69c99}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\OCR">
+      <UniqueIdentifier>{3b793014-669a-4c69-8dd1-d80f98ea293b}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -53,9 +65,6 @@
     </ClCompile>
     <ClCompile Include="MenuState.cpp">
       <Filter>Source Files\States</Filter>
-    </ClCompile>
-    <ClCompile Include="Container.cpp">
-      <Filter>Source Files\GUI</Filter>
     </ClCompile>
     <ClCompile Include="RelativeRect.cpp">
       <Filter>Source Files\GUI</Filter>
@@ -84,6 +93,30 @@
     <ClCompile Include="JsonHandler.cpp">
       <Filter>Source Files\JSON</Filter>
     </ClCompile>
+    <ClCompile Include="SettingsState.cpp">
+      <Filter>Source Files\States</Filter>
+    </ClCompile>
+    <ClCompile Include="ScrollBox.cpp">
+      <Filter>Source Files\GUI\Containers</Filter>
+    </ClCompile>
+    <ClCompile Include="Container.cpp">
+      <Filter>Source Files\GUI\Containers</Filter>
+    </ClCompile>
+    <ClCompile Include="DropDown.cpp">
+      <Filter>Source Files\GUI\Containers</Filter>
+    </ClCompile>
+    <ClCompile Include="ChangeableBox.cpp">
+      <Filter>Source Files\GUI\Containers</Filter>
+    </ClCompile>
+    <ClCompile Include="Sidebar.cpp">
+      <Filter>Source Files\GUI\Containers</Filter>
+    </ClCompile>
+    <ClCompile Include="Utility.cpp">
+      <Filter>Source Files\Static</Filter>
+    </ClCompile>
+    <ClCompile Include="OCR_Wrapper.cpp">
+      <Filter>Source Files\OCR</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Application.h">
@@ -91,9 +124,6 @@
     </ClInclude>
     <ClInclude Include="MenuState.h">
       <Filter>Header Files\States</Filter>
-    </ClInclude>
-    <ClInclude Include="Container.h">
-      <Filter>Header Files\GUI</Filter>
     </ClInclude>
     <ClInclude Include="RelativeRect.h">
       <Filter>Header Files\GUI</Filter>
@@ -130,6 +160,30 @@
     </ClInclude>
     <ClInclude Include="JsonHandler.h">
       <Filter>Header Files\JSON</Filter>
+    </ClInclude>
+    <ClInclude Include="SettingsState.h">
+      <Filter>Header Files\States</Filter>
+    </ClInclude>
+    <ClInclude Include="Container.h">
+      <Filter>Header Files\GUI\Containers</Filter>
+    </ClInclude>
+    <ClInclude Include="DropDown.h">
+      <Filter>Header Files\GUI\Containers</Filter>
+    </ClInclude>
+    <ClInclude Include="ScrollBox.h">
+      <Filter>Header Files\GUI\Containers</Filter>
+    </ClInclude>
+    <ClInclude Include="Sidebar.h">
+      <Filter>Header Files\GUI\Containers</Filter>
+    </ClInclude>
+    <ClInclude Include="ChangeableBox.h">
+      <Filter>Header Files\GUI\Containers</Filter>
+    </ClInclude>
+    <ClInclude Include="Utility.h">
+      <Filter>Header Files\Static</Filter>
+    </ClInclude>
+    <ClInclude Include="OCR_Wrapper.h">
+      <Filter>Header Files\OCR</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

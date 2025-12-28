@@ -1,25 +1,21 @@
 #include "JsonHandler.h"
 
 #include <fstream>
+#include "Logger.h"
 
 JsonHandler::JsonHandler()
 {
-}
-
-void JsonHandler::setLogger(Logger* l)
-{
-	logger = l;
 }
 
 void JsonHandler::openJson(std::string accessKey, std::string filePath)
 {
 	std::ifstream JsonFileWrapper(filePath);
 	if (!JsonFileWrapper) {
-		logger->LogData(Logger::Action, "JsonHandler failed to open " + filePath);
+		Logger::Instance->LogData(Logger::Action, "JsonHandler failed to open " + filePath);
 		return;
 	}
 	else {
-		logger->LogData(Logger::Action, "JsonHandler opened " + filePath);
+		Logger::Instance->LogData(Logger::Action, "JsonHandler opened " + filePath);
 	}
 	accessKeyToFile[accessKey] = filePath;
 	DATA[accessKey] = *(new json()); //Initialize JSON object

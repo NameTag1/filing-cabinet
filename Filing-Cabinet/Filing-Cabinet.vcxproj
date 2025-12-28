@@ -29,34 +29,48 @@
   <ItemGroup>
     <ClCompile Include="Application.cpp" />
     <ClCompile Include="Button.cpp" />
+    <ClCompile Include="ChangeableBox.cpp" />
     <ClCompile Include="Container.cpp" />
+    <ClCompile Include="DropDown.cpp" />
     <ClCompile Include="GUI_Object.cpp" />
     <ClCompile Include="Image.cpp" />
     <ClCompile Include="JsonHandler.cpp" />
     <ClCompile Include="Logger.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="MenuState.cpp" />
+    <ClCompile Include="OCR_Wrapper.cpp" />
     <ClCompile Include="RelativeRect.cpp" />
+    <ClCompile Include="ScrollBox.cpp" />
+    <ClCompile Include="SettingsState.cpp" />
+    <ClCompile Include="Sidebar.cpp" />
     <ClCompile Include="State.cpp" />
     <ClCompile Include="StateStack.cpp" />
     <ClCompile Include="TextBox.cpp" />
+    <ClCompile Include="Utility.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Application.h" />
     <ClInclude Include="Button.h" />
+    <ClInclude Include="ChangeableBox.h" />
     <ClInclude Include="Container.h" />
     <ClInclude Include="Context.h" />
+    <ClInclude Include="DropDown.h" />
     <ClInclude Include="GUI_Object.h" />
     <ClInclude Include="Image.h" />
     <ClInclude Include="JsonHandler.h" />
     <ClInclude Include="Logger.h" />
     <ClInclude Include="MenuState.h" />
+    <ClInclude Include="OCR_Wrapper.h" />
     <ClInclude Include="RelativeRect.h" />
     <ClInclude Include="ResourceHolder.h" />
+    <ClInclude Include="ScrollBox.h" />
+    <ClInclude Include="SettingsState.h" />
+    <ClInclude Include="Sidebar.h" />
     <ClInclude Include="State.h" />
     <ClInclude Include="States.h" />
     <ClInclude Include="StateStack.h" />
     <ClInclude Include="TextBox.h" />
+    <ClInclude Include="Utility.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="ResourceHolder.inl" />
@@ -72,13 +86,13 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v143</PlatformToolset>
+    <PlatformToolset>v145</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
-    <PlatformToolset>v143</PlatformToolset>
+    <PlatformToolset>v145</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
@@ -91,20 +105,20 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
-    <PlatformToolset>v143</PlatformToolset>
+    <PlatformToolset>v145</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|ARM64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v143</PlatformToolset>
+    <PlatformToolset>v145</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|ARM64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
-    <PlatformToolset>v143</PlatformToolset>
+    <PlatformToolset>v145</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>

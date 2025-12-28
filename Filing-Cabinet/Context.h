@@ -6,7 +6,6 @@
 
 struct Context {
 	sf::RenderWindow* mWindow;
-	Logger* mLogger;
 	TextureHolder* mTextureHolder;
 	FontHolder* mFontHolder;
 };

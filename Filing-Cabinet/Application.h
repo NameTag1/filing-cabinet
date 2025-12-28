@@ -1,10 +1,10 @@
 #pragma once
 #include "StateStack.h"
-#include "ResourceHolder.h"
 #include "Context.h"
 #include "JsonHandler.h"
+#include "OCR_Wrapper.h"
 
-#include <SFML/Graphics.hpp>
+#include <SFML/Graphics/RenderWindow.hpp>
 
 class Application
 {
@@ -20,5 +20,6 @@ private:
 	sf::RenderWindow mWindow;
 	Context mContext;
 	JsonHandler mJsonHandler;
+	OCR_Wrapper mOCR;
 };
 

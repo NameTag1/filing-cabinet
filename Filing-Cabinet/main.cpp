@@ -2,12 +2,26 @@
 //
 
 #include "Application.h"
+#include "Logger.h"
+#include <exception>
 
 int WinMain()
 {
-    Application app;
-    app.RUN();
+	Logger l;
+	try
+	{
+		Application app;
+		app.RUN();
+	}
+	catch (std::exception& e)
+	{
+		l.LogData(Logger::Sys, "Error: " + std::string(e.what()));
+		//std::cout << "\nEXCEPTION: " << e.what() << std::endl;
+	}
+	l.WriteLog();
+	l.CloseLogger();
 }
+
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
 // Debug program: F5 or Debug > Start Debugging menu

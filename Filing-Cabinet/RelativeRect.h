@@ -28,6 +28,7 @@ public:
 	void setRect(sf::FloatRect newRect);
 	sf::FloatRect getRect();
 	sf::FloatRect getRect(sf::FloatRect parentRect);
+	sf::FloatRect getRelativeRect();
 	void scaleSprite(sf::Sprite& sprite);
 	void scaleSprite(sf::Sprite& sprite, bool maintainRatio);
 
