@@ -1,7 +1,9 @@
-2025-12-28
-11:51:11 - OCR_Wrapper initialized API
-11:51:11 - Application Initialized
-11:51:11 - Pushed Menu State
-11:51:12 - States Cleared
-11:51:12 - JsonHandler Closed
-11:51:20 - Window Closed
+2025-12-29
+11:38:03 - OCR_Wrapper initialized API
+11:38:03 - Application Initialized
+11:38:03 - OCR_Wrapper OCR Thread Started
+11:38:03 - Pushed Menu State
+11:38:04 - States Cleared
+11:38:04 - JsonHandler Closed
+11:38:04 - Window Closed
+11:38:04 - OCR_Wrapper OCR Thread Exiting

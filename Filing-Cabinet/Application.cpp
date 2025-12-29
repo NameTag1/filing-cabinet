@@ -61,7 +61,7 @@ void Application::RUN()
 	mJsonHandler.closeAll();
 	Logger::Instance->LogData(Logger::Sys, "JsonHandler Closed");
 
-	mOCR.getText("1Data.png");
+	/*mOCR.addToScanQueue("1Data.png");*/
 
 	mWindow.close();
 	Logger::Instance->LogData(Logger::Sys, "Window Closed");

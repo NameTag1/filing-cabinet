@@ -1,5 +1,23 @@
 ﻿  Application.cpp
+  Button.cpp
+  ChangeableBox.cpp
+  Container.cpp
+  DropDown.cpp
+  GUI_Object.cpp
+  Image.cpp
+  JsonHandler.cpp
+  Logger.cpp
+  main.cpp
+  MenuState.cpp
   OCR_Wrapper.cpp
+  RelativeRect.cpp
+  ScrollBox.cpp
+  SettingsState.cpp
+  Sidebar.cpp
+  State.cpp
+  StateStack.cpp
+  TextBox.cpp
+  Utility.cpp
   Generating Code...
   Filing-Cabinet.vcxproj -> C:\Users\natha\Documents\GitHub\filing-cabinet\Filing-Cabinet\x64\Debug\Filing-Cabinet.exe
   'pwsh.exe' is not recognized as an internal or external command,

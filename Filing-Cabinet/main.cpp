@@ -4,8 +4,9 @@
 #include "Application.h"
 #include "Logger.h"
 #include <exception>
+#include <windows.h>
 
-int WinMain()
+int WINAPI wWinMain(HINSTANCE, HINSTANCE, PWSTR, int)
 {
 	Logger l;
 	try
@@ -16,10 +17,10 @@ int WinMain()
 	catch (std::exception& e)
 	{
 		l.LogData(Logger::Sys, "Error: " + std::string(e.what()));
-		//std::cout << "\nEXCEPTION: " << e.what() << std::endl;
 	}
 	l.WriteLog();
 	l.CloseLogger();
+	return 0;
 }
 
 

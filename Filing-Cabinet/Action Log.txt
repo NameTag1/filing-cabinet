@@ -1,11 +1,2 @@
-2025-12-28
-11:51:11 - JsonHandler opened Data/settings.json
-11:51:20 - Scan Output:Home > Download
-
-Windows
-
-On Windows, choosing 32 or 64-bit libraries should be based on which platform you want to compile for, not
-which OS you have. Indeed, you can perfectly compile and run a 32-bit program on a 64-bit Windows. So
-you'll most likely want to target 32-bit platforms, to have the largest possible audience. Choose 64-bit
-packages only if you have good reasons.
-
+2025-12-29
+11:38:03 - JsonHandler opened Data/settings.json
