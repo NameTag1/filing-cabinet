@@ -4,13 +4,14 @@
 #include <SFML/Graphics/Font.hpp>
 #include <string>
 #include <map>
+#include <filesystem>
 
 template <typename T> 
 class ResourceHolder
 {
 public:
-	T* getResource(std::string key);
-	void loadResource(const std::filesystem::path& filename, std::string key);
+	T* getResource(const std::string& key);
+	void loadResource(const std::filesystem::path& filename, const std::string& key);
 
 private:
 	std::map<std::string, T> mResources;

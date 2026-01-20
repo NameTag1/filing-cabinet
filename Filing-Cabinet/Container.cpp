@@ -7,6 +7,7 @@ Container::Container(RelativeRect rect)
 
 void Container::pushObject(std::unique_ptr<GUI_Object> object)
 {
+	object->setParrent(this);
 	mObjects.push_back(std::move(object));
 }
 

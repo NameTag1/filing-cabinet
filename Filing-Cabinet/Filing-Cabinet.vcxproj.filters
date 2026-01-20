@@ -117,6 +117,21 @@
     <ClCompile Include="OCR_Wrapper.cpp">
       <Filter>Source Files\OCR</Filter>
     </ClCompile>
+    <ClCompile Include="FloatBox.cpp">
+      <Filter>Source Files\GUI\Containers</Filter>
+    </ClCompile>
+    <ClCompile Include="Camera_Wrapper.cpp">
+      <Filter>Source Files\OCR</Filter>
+    </ClCompile>
+    <ClCompile Include="NewDocumentState.cpp">
+      <Filter>Source Files\States</Filter>
+    </ClCompile>
+    <ClCompile Include="ExpandableSidebar.cpp">
+      <Filter>Source Files\GUI\Containers</Filter>
+    </ClCompile>
+    <ClCompile Include="Constants.cpp">
+      <Filter>Source Files\Static</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Application.h">
@@ -148,9 +163,6 @@
     </ClInclude>
     <ClInclude Include="StateStack.h">
       <Filter>Header Files\States</Filter>
-    </ClInclude>
-    <ClInclude Include="Context.h">
-      <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="States.h">
       <Filter>Header Files\Enums</Filter>
@@ -184,6 +196,24 @@
     </ClInclude>
     <ClInclude Include="OCR_Wrapper.h">
       <Filter>Header Files\OCR</Filter>
+    </ClInclude>
+    <ClInclude Include="FloatBox.h">
+      <Filter>Header Files\GUI\Containers</Filter>
+    </ClInclude>
+    <ClInclude Include="Camera_Wrapper.h">
+      <Filter>Header Files\OCR</Filter>
+    </ClInclude>
+    <ClInclude Include="NewDocumentState.h">
+      <Filter>Header Files\States</Filter>
+    </ClInclude>
+    <ClInclude Include="ExpandableSidebar.h">
+      <Filter>Header Files\GUI\Containers</Filter>
+    </ClInclude>
+    <ClInclude Include="Constants.h">
+      <Filter>Header Files\Static</Filter>
+    </ClInclude>
+    <ClInclude Include="Context.h">
+      <Filter>Header Files\Enums</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

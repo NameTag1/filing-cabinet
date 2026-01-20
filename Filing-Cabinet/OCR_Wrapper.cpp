@@ -7,6 +7,8 @@
 #include <utility>
 #include <mutex>
 
+OCR_Wrapper* OCR_Wrapper::instance = nullptr;
+
 OCR_Wrapper::OCR_Wrapper()
 	: ocrThread(nullptr)
 	, threadRunning(false)
@@ -27,6 +29,8 @@ OCR_Wrapper::OCR_Wrapper()
 		threadRunning = true;
 		ocrThread = new std::thread(&OCR_Wrapper::processScanQueue, this);
 	}
+
+	instance = this;
 }
 
 OCR_Wrapper::~OCR_Wrapper()
@@ -49,6 +53,11 @@ OCR_Wrapper::~OCR_Wrapper()
 		delete api;
 		api = nullptr;
 	}
+}
+
+OCR_Wrapper* OCR_Wrapper::getInstance()
+{
+	return instance;
 }
 
 void OCR_Wrapper::processScanQueue()

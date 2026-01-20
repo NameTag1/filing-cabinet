@@ -7,7 +7,15 @@
 class DropDown : public GUI_Object
 {
 public:
-	DropDown(sf::Texture* texture, RelativeRect rect);
+	enum class Side {
+		Below,
+		Above,
+		Right,
+		Left
+	};
+
+	// Now accepts a Side to control where the child container is laid out.
+	DropDown(sf::Texture* texture, RelativeRect rect, Side side = Side::Below);
 
 	virtual bool update(sf::FloatRect parrentRect) override;
 	virtual bool handleEvent(const std::optional<sf::Event> event, sf::RenderWindow* window) override;
@@ -22,5 +30,7 @@ private:
 	std::unique_ptr<Container> mChild;
 
 	bool focus;
+
+	Side mSide;
 };
 

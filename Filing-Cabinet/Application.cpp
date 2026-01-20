@@ -1,5 +1,6 @@
 #include "Application.h"
 #include "Logger.h"
+#include "Constants.h"
 
 #include "States.h"
 #include <optional>
@@ -21,10 +22,15 @@ Application::Application()
 
 	Logger::Instance->LogData(Logger::Sys, "Application Initialized");
 
+	mContext.mFontHolder->loadResource("resources/montserrat/Montserrat-Regular.ttf", "Main");
+
 	mJsonHandler.openJson("settings", "Data/settings.json");
 
 	mWindow.setSize({ mJsonHandler.DATA["settings"]["Window"]["ScreenW"],mJsonHandler.DATA["settings"]["Window"]["ScreenH"] });
 	mWindow.setPosition({ mJsonHandler.DATA["settings"]["Window"]["ScreenX"],mJsonHandler.DATA["settings"]["Window"]["ScreenY"] });
+
+	//Initialize Constants, don't save object created.
+	Constants z(mJsonHandler.DATA["settings"]);
 
 	// Ensure the view matches the window size so layout and event coords align
 	mWindow.setView(sf::View(sf::FloatRect(
@@ -41,10 +47,11 @@ void Application::RUN()
 	mStateStack.pushState(StateType::Menu);
 
 	while (running) {
-		mWindow.clear({ 92, 255, 92 });
 
 		mStateStack.update();
 		handleEvents();
+
+		mWindow.clear({ 92, 255, 92 });
 		mStateStack.draw();
 
 		mWindow.display();
@@ -75,6 +82,12 @@ void Application::handleEvents()
 			running = false;
 			Logger::Instance->LogData(Logger::Sys, "Stopping...");
 			break;
+		}
+		else if (event->is<sf::Event::Resized>()) {
+			// Keep the default view size equal to the window size so drawing and input coordinates stay aligned.
+			const float newWidth = static_cast<float>(mWindow.getSize().x);
+			const float newHeight = static_cast<float>(mWindow.getSize().y);
+			mWindow.setView(sf::View(sf::FloatRect({ 0.f, 0.f }, { newWidth, newHeight })));
 		}
 		else {
 			mStateStack.handleEvent(event);

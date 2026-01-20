@@ -6,6 +6,8 @@
 
 enum RelativeWH {
 	Static,
+	StaticW,
+	StaticH,
 	WBased,
 	HBased,
 	WHBased,
@@ -22,10 +24,10 @@ enum Anchor {
 class RelativeRect
 {
 public:
-	RelativeRect(sf::FloatRect rect);
-	RelativeRect(sf::FloatRect rect, RelativeWH wh, Anchor a);
+	RelativeRect(sf::FloatRect rect, RelativeWH wh = Normal, Anchor a = TL);
 	void update(sf::FloatRect parentRect);
 	void setRect(sf::FloatRect newRect);
+	void shiftRect(sf::FloatRect modify);
 	sf::FloatRect getRect();
 	sf::FloatRect getRect(sf::FloatRect parentRect);
 	sf::FloatRect getRelativeRect();

@@ -1,17 +1,6 @@
 #include "RelativeRect.h"
 #include <iostream>
 
-RelativeRect::RelativeRect(sf::FloatRect rect)
-: x(rect.position.x)
-, y(rect.position.y)
-, w(rect.size.x)
-, h(rect.size.y)
-, mWH(Normal)
-, mAnchor(TL)
-{
-	
-}
-
 RelativeRect::RelativeRect(sf::FloatRect rect, RelativeWH wh, Anchor a)
 : x(rect.position.x)
 , y(rect.position.y)
@@ -27,6 +16,16 @@ void RelativeRect::update(sf::FloatRect parentRect)
 {
 	if (mWH == RelativeWH::Static) {
 		tempRect.size.x = w;
+		tempRect.size.y = h;
+	}
+
+	if (mWH == RelativeWH::StaticW) {
+		tempRect.size.x = w;
+		tempRect.size.y = parentRect.size.y * h;
+	}
+
+	if (mWH == RelativeWH::StaticH) {
+		tempRect.size.x = parentRect.size.x * w;
 		tempRect.size.y = h;
 	}
 
@@ -95,6 +94,14 @@ void RelativeRect::setRect(sf::FloatRect newRect)
 	y = newRect.position.y;
 	w = newRect.size.x;
 	h = newRect.size.y;
+}
+
+void RelativeRect::shiftRect(sf::FloatRect modify)
+{
+	x += modify.position.x;
+	y += modify.position.y;
+	w += modify.size.x;
+	h += modify.size.y;
 }
 
 sf::FloatRect RelativeRect::getRect()

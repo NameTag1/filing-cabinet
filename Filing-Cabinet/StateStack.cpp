@@ -2,8 +2,11 @@
 
 #include "Logger.h"
 #include "MenuState.h"
+#include "NewDocumentState.h"
+#include "States.h"
 
 StateStack::StateStack()
+	: mContext(nullptr)
 {
 	State::setParrent(this);
 }
@@ -12,8 +15,8 @@ void StateStack::update()
 {
 	RunActions();
 	
-	for(auto & state : mStates) {
-		if(!state->update()) {
+	for (auto itr = mStates.rbegin(); itr != mStates.rend(); ++itr){
+		if(!(*itr)->update()) {
 			break; // If false is returned, stop updating further states
 		}
 	}
@@ -21,8 +24,8 @@ void StateStack::update()
 
 void StateStack::handleEvent(const std::optional<sf::Event> event)
 {
-	for(auto & state : mStates) {
-		if(!state->handleEvent(event)) {
+	for (auto itr = mStates.rbegin(); itr != mStates.rend(); ++itr) {
+		if (!(*itr)->handleEvent(event)) {
 			break; // If false is returned, stop event handling of further states
 		}
 	}
@@ -30,8 +33,8 @@ void StateStack::handleEvent(const std::optional<sf::Event> event)
 
 void StateStack::draw()
 {
-	for(auto & state : mStates) {
-		if(!state->draw()) {
+	for (auto itr = mStates.rbegin(); itr != mStates.rend(); ++itr) {
+		if (!(*itr)->draw()) {
 			break; // If false is returned, stop drawing further states
 		}
 	}
@@ -79,6 +82,10 @@ void StateStack::RunActions()
 			case Menu:
 				mStates.push_back(new MenuState());
 				Logger::Instance->LogData(Logger::Sys, "Pushed Menu State");
+				break;
+			case NewDocState:
+				mStates.push_back(new NewDocumentState());
+				Logger::Instance->LogData(Logger::Sys, "Pushed NewDocumentState State");
 				break;
 			default:
 				// Handle unknown state type

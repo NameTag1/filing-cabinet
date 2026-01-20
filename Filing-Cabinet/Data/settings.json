@@ -1,4 +1,9 @@
 {
+    "Text": {
+        "NormaTextlSize": 12,
+        "SubtitleSize": 24,
+        "TitleSize": 36
+    },
     "Window": {
         "ScreenH": 1779,
         "ScreenW": 2880,

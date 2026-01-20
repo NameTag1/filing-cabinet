@@ -1,28 +1,39 @@
 #include "Logger.h"
+#include <type_traits>
 
 template <typename T>
-T* ResourceHolder<T>::getResource(std::string key)
+T* ResourceHolder<T>::getResource(const std::string& key)
 {
-	//If texture not found, return nullptr
-	if (mResources.find(key) == mResources.end()) {
-		Logger::Instance->LogData(Logger::Sys, "Texture with key '" + key + "' not found!");
+	auto it = mResources.find(key);
+	if (it == mResources.end()) {
+		Logger::Instance->LogData(Logger::Sys, "Resource with key '" + key + "' not found!");
 		return nullptr;
 	}
-	return &mResources[key];
+	return &it->second;
 }
 
 template <typename T>
-void ResourceHolder<T>::loadResource(const std::filesystem::path& filename, std::string key)
+void ResourceHolder<T>::loadResource(const std::filesystem::path& filename, const std::string& key)
 {
 	if (mResources.find(key) != mResources.end()) {
-		return; //File already loaded, just exit
+		return; // File already loaded
 	}
+
 	T resource;
-	if (!resource.loadFromFile(filename)) {
-		/*Logger::Instance->LogData(Logger::Sys, "Failed to load texture from file: " + filename.string());*/
+	bool loaded = false;
+
+	// Use compile-time dispatch to call the correct load function for sf::Font vs other SFML resources.
+	if constexpr (std::is_same_v<T, sf::Font>) {
+		// Some SFML-like font implementations expose openFromFile instead of loadFromFile
+		loaded = resource.openFromFile(filename.string());
+	} else {
+		loaded = resource.loadFromFile(filename.string());
+	}
+
+	if (!loaded) {
+		Logger::Instance->LogData(Logger::Sys, "Failed to load resource from file: " + filename.string());
 		return;
 	}
-	mResources[key] = resource;
 
-	//Logger::Instance->LogData(Logger::Action, "Loaded texture from file: " + filename.string() + " with key: " + key);
+	mResources.emplace(key, std::move(resource));
 }

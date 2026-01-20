@@ -31,11 +31,11 @@ bool Button::handleEvent(const std::optional<sf::Event> event, sf::RenderWindow*
 		// Convert window pixel coords -> world coords
 		sf::Vector2f mouseWorld = window->mapPixelToCoords({ mouseEvent->position.x, mouseEvent->position.y });
 
-		// Convert world coords into this object's local coords
-		sf::Vector2f localPos = getInverseTransform().transformPoint(mouseWorld);
+		// Convert world coords into this object's local coords. If parrent exists, apply its transforms.
+		sf::Vector2f localPos = GUI_Object::getWorldTransform().getInverse().transformPoint(mouseWorld);
 
 		// Local rect is (0,0) .. (width, height)
-		const sf::FloatRect rectLocal({ 0.f, 0.f }, { mRect.getRect().size.x, mRect.getRect().size.y });
+		const sf::FloatRect rectLocal({ 0.f, 0.f }, { mRect.getRect().size });
 
 		if (rectLocal.contains(localPos)) {
 			hoveredOver = true;
@@ -52,8 +52,8 @@ bool Button::handleEvent(const std::optional<sf::Event> event, sf::RenderWindow*
 			// Convert window pixel coords -> world coords
 			sf::Vector2f mouseWorld = window->mapPixelToCoords({ mouseEvent->position.x, mouseEvent->position.y });
 			
-			// Convert world coords into this object's local coords
-			sf::Vector2f localPos = getInverseTransform().transformPoint(mouseWorld);
+			// Convert world coords into this object's local coords.
+			sf::Vector2f localPos = GUI_Object::getWorldTransform().getInverse().transformPoint(mouseWorld);
 
 			// Local rect is (0,0) .. (width, height)
 			const sf::FloatRect rectLocal({ 0.f, 0.f }, { mRect.getRect().size.x, mRect.getRect().size.y });

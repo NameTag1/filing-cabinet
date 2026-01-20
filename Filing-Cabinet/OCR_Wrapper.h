@@ -16,12 +16,16 @@ public:
 	OCR_Wrapper();
 	~OCR_Wrapper();
 
+	static OCR_Wrapper* getInstance();
+
 	void processScanQueue();
 	void addToScanQueue(std::string filename);
 
 	std::vector<std::string> scannedTexts;
 
 private:
+	static OCR_Wrapper* instance;
+
 	std::thread* ocrThread;
 	std::atomic<bool> threadRunning; //Used to signal thread to stop
 	tesseract::TessBaseAPI* api;

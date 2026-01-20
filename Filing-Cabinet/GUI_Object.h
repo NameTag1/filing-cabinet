@@ -11,9 +11,15 @@ public:
 	virtual bool handleEvent(const std::optional<sf::Event> event, sf::RenderWindow* window);
 
 	virtual sf::FloatRect getRect();
+	RelativeRect* getRelativeRect();
+
+	void setParrent(GUI_Object* container);
+
+	sf::Transform getWorldTransform();
 
 protected:
 	RelativeRect mRect;
+	GUI_Object* mParrent;
 
 private:
 	virtual void draw(sf::RenderTarget& target, sf::RenderStates states) const override;

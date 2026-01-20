@@ -7,5 +7,6 @@ enum StateType
 	Settings,
 	Scanner,
 	FileView,
+	NewDocState
 	// etc
 };
