@@ -49,6 +49,12 @@
     <Filter Include="Header Files\GUI\Containers">
       <UniqueIdentifier>{3735cdd9-503a-4314-b0cb-a1dd8114d8d4}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\Organization">
+      <UniqueIdentifier>{7b3359e7-7596-407d-a522-537ecc9f655b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Organization">
+      <UniqueIdentifier>{cf4226d2-437c-4976-bf95-f0f660398980}</UniqueIdentifier>
+    </Filter>
     <Filter Include="Header Files\OCR">
       <UniqueIdentifier>{bf9868e8-ccff-42e1-8a9c-b4bdaad69c99}</UniqueIdentifier>
     </Filter>
@@ -132,6 +138,9 @@
     <ClCompile Include="Constants.cpp">
       <Filter>Source Files\Static</Filter>
     </ClCompile>
+    <ClCompile Include="Organization_Wrapper.cpp">
+      <Filter>Source Files\Organization</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Application.h">
@@ -214,6 +223,9 @@
     </ClInclude>
     <ClInclude Include="Context.h">
       <Filter>Header Files\Enums</Filter>
+    </ClInclude>
+    <ClInclude Include="Organization_Wrapper.h">
+      <Filter>Header Files\Organization</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

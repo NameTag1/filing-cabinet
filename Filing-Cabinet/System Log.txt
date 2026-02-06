@@ -1,3 +1,9 @@
-2026-01-19
-18:20:17 - OCR_Wrapper initialized API
-18:20:17 - Unhandled SEH exception code: 3221225477
+2026-02-06
+10:37:55 - OCR_Wrapper initialized API
+10:37:55 - Application Initialized
+10:37:55 - OCR_Wrapper OCR Thread Started
+10:37:55 - Pushed Menu State
+10:38:38 - States Cleared
+10:38:38 - JsonHandler Closed
+10:38:38 - Window Closed
+10:38:38 - OCR_Wrapper OCR Thread Exiting

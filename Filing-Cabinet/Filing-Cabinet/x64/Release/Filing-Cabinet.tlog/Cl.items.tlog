@@ -2,8 +2,10 @@ C:\Users\natha\Documents\GitHub\filing-cabinet\Filing-Cabinet\Application.cpp;C:
 C:\Users\natha\Documents\GitHub\filing-cabinet\Filing-Cabinet\Button.cpp;C:\Users\natha\Documents\GitHub\filing-cabinet\Filing-Cabinet\Filing-Cabinet\x64\Release\Button.obj
 C:\Users\natha\Documents\GitHub\filing-cabinet\Filing-Cabinet\Camera_Wrapper.cpp;C:\Users\natha\Documents\GitHub\filing-cabinet\Filing-Cabinet\Filing-Cabinet\x64\Release\Camera_Wrapper.obj
 C:\Users\natha\Documents\GitHub\filing-cabinet\Filing-Cabinet\ChangeableBox.cpp;C:\Users\natha\Documents\GitHub\filing-cabinet\Filing-Cabinet\Filing-Cabinet\x64\Release\ChangeableBox.obj
+C:\Users\natha\Documents\GitHub\filing-cabinet\Filing-Cabinet\Constants.cpp;C:\Users\natha\Documents\GitHub\filing-cabinet\Filing-Cabinet\Filing-Cabinet\x64\Release\Constants.obj
 C:\Users\natha\Documents\GitHub\filing-cabinet\Filing-Cabinet\Container.cpp;C:\Users\natha\Documents\GitHub\filing-cabinet\Filing-Cabinet\Filing-Cabinet\x64\Release\Container.obj
 C:\Users\natha\Documents\GitHub\filing-cabinet\Filing-Cabinet\DropDown.cpp;C:\Users\natha\Documents\GitHub\filing-cabinet\Filing-Cabinet\Filing-Cabinet\x64\Release\DropDown.obj
+C:\Users\natha\Documents\GitHub\filing-cabinet\Filing-Cabinet\ExpandableSidebar.cpp;C:\Users\natha\Documents\GitHub\filing-cabinet\Filing-Cabinet\Filing-Cabinet\x64\Release\ExpandableSidebar.obj
 C:\Users\natha\Documents\GitHub\filing-cabinet\Filing-Cabinet\FloatBox.cpp;C:\Users\natha\Documents\GitHub\filing-cabinet\Filing-Cabinet\Filing-Cabinet\x64\Release\FloatBox.obj
 C:\Users\natha\Documents\GitHub\filing-cabinet\Filing-Cabinet\GUI_Object.cpp;C:\Users\natha\Documents\GitHub\filing-cabinet\Filing-Cabinet\Filing-Cabinet\x64\Release\GUI_Object.obj
 C:\Users\natha\Documents\GitHub\filing-cabinet\Filing-Cabinet\Image.cpp;C:\Users\natha\Documents\GitHub\filing-cabinet\Filing-Cabinet\Filing-Cabinet\x64\Release\Image.obj
@@ -13,6 +15,7 @@ C:\Users\natha\Documents\GitHub\filing-cabinet\Filing-Cabinet\main.cpp;C:\Users\
 C:\Users\natha\Documents\GitHub\filing-cabinet\Filing-Cabinet\MenuState.cpp;C:\Users\natha\Documents\GitHub\filing-cabinet\Filing-Cabinet\Filing-Cabinet\x64\Release\MenuState.obj
 C:\Users\natha\Documents\GitHub\filing-cabinet\Filing-Cabinet\NewDocumentState.cpp;C:\Users\natha\Documents\GitHub\filing-cabinet\Filing-Cabinet\Filing-Cabinet\x64\Release\NewDocumentState.obj
 C:\Users\natha\Documents\GitHub\filing-cabinet\Filing-Cabinet\OCR_Wrapper.cpp;C:\Users\natha\Documents\GitHub\filing-cabinet\Filing-Cabinet\Filing-Cabinet\x64\Release\OCR_Wrapper.obj
+C:\Users\natha\Documents\GitHub\filing-cabinet\Filing-Cabinet\Organization_Wrapper.cpp;C:\Users\natha\Documents\GitHub\filing-cabinet\Filing-Cabinet\Filing-Cabinet\x64\Release\Organization_Wrapper.obj
 C:\Users\natha\Documents\GitHub\filing-cabinet\Filing-Cabinet\RelativeRect.cpp;C:\Users\natha\Documents\GitHub\filing-cabinet\Filing-Cabinet\Filing-Cabinet\x64\Release\RelativeRect.obj
 C:\Users\natha\Documents\GitHub\filing-cabinet\Filing-Cabinet\ScrollBox.cpp;C:\Users\natha\Documents\GitHub\filing-cabinet\Filing-Cabinet\Filing-Cabinet\x64\Release\ScrollBox.obj
 C:\Users\natha\Documents\GitHub\filing-cabinet\Filing-Cabinet\SettingsState.cpp;C:\Users\natha\Documents\GitHub\filing-cabinet\Filing-Cabinet\Filing-Cabinet\x64\Release\SettingsState.obj

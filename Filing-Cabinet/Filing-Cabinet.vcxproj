@@ -44,6 +44,7 @@
     <ClCompile Include="MenuState.cpp" />
     <ClCompile Include="NewDocumentState.cpp" />
     <ClCompile Include="OCR_Wrapper.cpp" />
+    <ClCompile Include="Organization_Wrapper.cpp" />
     <ClCompile Include="RelativeRect.cpp" />
     <ClCompile Include="ScrollBox.cpp" />
     <ClCompile Include="SettingsState.cpp" />
@@ -71,6 +72,7 @@
     <ClInclude Include="MenuState.h" />
     <ClInclude Include="NewDocumentState.h" />
     <ClInclude Include="OCR_Wrapper.h" />
+    <ClInclude Include="Organization_Wrapper.h" />
     <ClInclude Include="RelativeRect.h" />
     <ClInclude Include="ResourceHolder.h" />
     <ClInclude Include="ScrollBox.h" />
